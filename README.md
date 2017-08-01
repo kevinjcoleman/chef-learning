@@ -105,3 +105,40 @@ knife status 'role:web' --run-list
 ## Cookbook details
 ### RVM Config
 https://supermarket.chef.io/cookbooks/rvm#readme
+
+
+## Kitchen
+
+### List kitchen instances
+```
+kitchen list
+```
+
+### Create kitchen instance
+```
+kitchen create
+```
+
+### Apply cookbook
+```
+kitchen converge
+```
+
+### Check if test exited correctly
+```
+echo $?
+```
+
+### Cleanup kitchen
+```
+kitchen destroy
+```
+
+### Run InSpec tests
+```
+kitchen verify
+```
+
+[TDD with inspec](https://learn.chef.io/modules/tdd-with-inspec/rhel/virtualbox/create-a-web-server-cookbook#/)
+
+### For connection errors ie `Waiting for SSH service on 127.0.0.1:2200, retrying in 3 seconds` go to the VM settings under `Settings - Network - Adapter 1 - Advanced` and check the "Cable connected" checkbox.
