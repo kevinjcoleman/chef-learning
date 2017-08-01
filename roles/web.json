@@ -5,6 +5,21 @@
    "chef_client": {
      "interval": 300,
      "splay": 60
+   },
+   "rvm": {
+     "install_rubies": true,
+     "default_ruby": "2.3.2",
+     "group_users": [
+        "ubuntu"
+     ],
+     "global_gems": [
+         {"name": "bundler" },
+         {"name": "rake"},
+         {"name": "rubygems-bundler",
+         "action": "remove"},
+         {"name": "rails",
+          "version": "5.1.2"}
+      ]
    }
  },
  "override_attributes": {
@@ -12,7 +27,9 @@
  "chef_type": "role",
  "run_list": ["recipe[chef-client::default]",
               "recipe[chef-client::delete_validation]",
-              "recipe[learn_chef_apache2::default]"
+              "recipe[learn_chef_apache2::default]",
+              "recipe[nodejs]",
+              "recipe[rvm::system]"
  ],
  "env_run_lists": {
  }

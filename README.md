@@ -100,3 +100,8 @@ knife status 'role:web' --run-list
 
 ### Upload external cookbooks
 ```berks upload```
+
+
+## Cookbook details
+### RVM Config
+https://supermarket.chef.io/cookbooks/rvm#readme
